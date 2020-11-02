@@ -71,20 +71,14 @@ function init() {
             if (fuelLevel.value < 10000 && cargoMass.value > 10000) {
                 fuelStatus.innerHTML = `Fuel level too low for launch. Must be at least 10,000 liters.`;
                 cargoStatus.innerHTML = `Cargo mass too high for launch. Must be at or under 10,000 kilograms.`;
-                launchStatus.innerHTML = `Shuttle not ready for launch`;
-                launchStatus.style.color = 'red';
             }
             if (fuelLevel.value < 10000 && cargoMass.value < 10000) {
                 fuelStatus.innerHTML = `Fuel level too low for launch. Must be at least 10,000 liters.`;
                 cargoStatus.innerHTML = `Cargo mass low enough for launch.`;
-                launchStatus.innerHTML = `Shuttle not ready for launch`;
-                launchStatus.style.color = 'red';
             }
             if (fuelLevel.value > 9999 && cargoMass.value > 10000) {
                 cargoStatus.innerHTML = `Cargo mass too high for launch. Must be at or under 10,000 kilograms.`;
                 fuelStatus.innerHTML = `Fuel level high enough for launch.`;
-                launchStatus.innerHTML = `Shuttle not ready for launch`;
-                launchStatus.style.color = 'red';
             }
             if (fuelLevel.value > 9999 && cargoMass.value < 10001) {
                 launchStatus.innerHTML = `Shuttle is ready for launch`;
@@ -92,6 +86,8 @@ function init() {
                 cargoStatus.innerHTML = `Cargo mass low enough for launch.`;
                 launchStatus.style.color = 'green';
             }
+            launchStatus.innerHTML = `Shuttle not ready for launch`;
+            launchStatus.style.color = 'red';
             faultyItems.style.visibility = 'visible';
             pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch.`;
             copilotStatus.innerHTML = `Co-pilot ${copilotName.value} is ready for launch.`;
